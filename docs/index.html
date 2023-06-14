@@ -1,0 +1,71 @@
+<html>
+
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.js"></script>
+	<link href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.min.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1>Showcasing vizzu-story - reveal.js integration</h1>
+			</section>
+			<section data-auto-animate data-vizzu>
+				<vizzu-player data-id="vizzu"></vizzu-player>
+				<script type="application/json" data-vizzu-init-data>
+					{
+						"series": [{
+							"name": "Foo",
+							"values": ["Alice", "Bob", "Ted"]
+						}, {
+							"name": "Bar",
+							"values": [15, 32, 12]
+						}, {
+							"name": "Baz",
+							"values": [5, 3, 2]
+						}]
+					}
+				</script>
+				<script type="application/json" data-vizzu-init-slide>
+					{
+						"config": {
+							"x": "Foo",
+							"y": "Bar"
+						}
+					}
+				</script>
+				<script type="application/json" data-vizzu-slide class="fragment">
+					{
+						"config": {
+							"color": "Foo",
+							"x": "Baz",
+							"geometry": "circle"
+						}
+					}
+				</script>
+				<script type="application/json" data-vizzu-slide class="fragment">
+					{
+						"config": {
+							"color": "Bar",
+							"y": "Foo",
+							"geometry": "rectangle"
+						}
+					}
+				</script>
+			</section>
+			<section>
+				<h1>Right?</h1>
+			</section>
+		</div>
+	</div>
+	<script type="module">
+		import RevealVizzu from "./vizzu-reveal.js";
+
+		Reveal.initialize({
+			plugins: [ RevealVizzu ],
+		});
+	</script>
+</body>
+
+</html>
