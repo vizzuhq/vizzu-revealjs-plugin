@@ -49,17 +49,21 @@ const initRevealVizzu = (Reveal) => {
 		_initialize();
 
 		Reveal.addEventListener( 'fragmentshown', function( event ) {
-			const actIndex = Number(event.fragment.dataset.fragmentIndex) + 1;
-			console.log('s',actIndex);
-			const vp = players[event.fragment.dataset.VizzuPlayer];
-			vp.currentSlide = actIndex;
+			if (event.fragment.dataset.VizzuPlayer)
+			{
+				const vp = players[event.fragment.dataset.VizzuPlayer];
+				const actIndex = Number(event.fragment.dataset.fragmentIndex) + 1;
+				vp.currentSlide = actIndex;
+			}
 		} );
 
 		Reveal.addEventListener( 'fragmenthidden', function( event ) {
-			const actIndex = Number(event.fragment.dataset.fragmentIndex);
-			console.log('h',actIndex);
-			const vp = players[event.fragment.dataset.VizzuPlayer];
-			vp.currentSlide = actIndex;
+			if (event.fragment.dataset.VizzuPlayer)
+			{
+				const vp = players[event.fragment.dataset.VizzuPlayer];
+				const actIndex = Number(event.fragment.dataset.fragmentIndex);
+				vp.currentSlide = actIndex;
+			}
 		} );
 
 		return new Promise( resolve => setTimeout( resolve, 1000 ) )
