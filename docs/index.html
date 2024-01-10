@@ -9,7 +9,7 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h1>Showcasing vizzu-story - reveal.js integration</h1>
+				<h1>Vizzu-Story - reveal.js Integration Showcase</h1>
 			</section>
 			<section data-vizzu>
 				<vizzu-player data-id="vizzu"></vizzu-player>
@@ -31,7 +31,18 @@
 					{
 						"config": {
 							"x": "Foo",
-							"y": "Bar"
+							"y": "Bar",
+							"label": "Bar",
+							"title": "With Vizzu you can take any chart..."
+						}
+					}
+				</script>
+				<script type="application/json" data-vizzu-slide class="fragment">
+					{
+						"config": {
+							"color": "Foo",
+							"geometry": "circle",
+							"title":"...and morph it to a different chart..."
 						}
 					}
 				</script>
@@ -40,22 +51,39 @@
 						"config": {
 							"color": "Foo",
 							"x": "Baz",
-							"geometry": "circle"
+							"label": null,
+							"title": "...to present a captivating data story."
+
 						}
 					}
 				</script>
 				<script type="application/json" data-vizzu-slide class="fragment">
 					{
 						"config": {
-							"color": "Bar",
-							"y": "Foo",
-							"geometry": "rectangle"
+							"x": ["Foo","Baz"],
+							"y": null,
+							"label": "Bar",
+							"geometry": "rectangle",
+							"title": "We think it would be great to see this capability..."
+						}
+					}
+				</script>
+				<script type="application/json" data-vizzu-slide class="fragment">					
+					{
+						"config": {
+							"coordSystem" : "polar",
+							"y": {
+								"range": {
+									"min": "-200%"
+								}
+							},
+							"title": "...in reveal.js and Slides.com decks."
 						}
 					}
 				</script>
 			</section>
 			<section>
-				<h1>Right?</h1>
+				<h1>What do you think?</h1>
 			</section>
 		</div>
 	</div>
